@@ -1,3 +1,3 @@
 # Title
 
-[link?]www.hi.com
+link?(www.hi.com)
