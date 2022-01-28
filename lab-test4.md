@@ -1,1 +1,2 @@
-[isThisALink]
+[isThisALink](
+[link!](hi.com)
