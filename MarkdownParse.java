@@ -35,7 +35,6 @@ public class MarkdownParse {
                     if (nextOpenBracket != 0) {
                         if (!markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")) {
                             toReturn.add(markdown.substring(openParen + 1, closeParen));
-
                         }
                         currentIndex = closeParen + 1;
                     } else {

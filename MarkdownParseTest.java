@@ -160,4 +160,41 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals(linkTester, links);
     }
+
+    @Test
+    public void testGetLinksLabTest1() throws IOException{
+        ArrayList<String> linkTester = new ArrayList<>();
+        linkTester.add("`google.com");
+        linkTester.add("google.com");
+        linkTester.add("ucsd.edu");
+
+        Path fileName = Path.of("lab-report-test1.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(linkTester, links);
+    }
+
+    @Test
+    public void testGetLinksLabTest2() throws IOException{
+        ArrayList<String> linkTester = new ArrayList<>();
+        linkTester.add("a.com");
+        linkTester.add("a.com(())");
+        linkTester.add("example.com");
+
+        Path fileName = Path.of("lab-report-test2.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(linkTester, links);
+    }
+
+    @Test
+    public void testGetLinksLabTest3() throws IOException{
+        ArrayList<String> linkTester = new ArrayList<>();
+        linkTester.add("https://ucsd-cse15l-w22.github.io/");
+
+        Path fileName = Path.of("lab-report-test3.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(linkTester, links);
+    }
 }
